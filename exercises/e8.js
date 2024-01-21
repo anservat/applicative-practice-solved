@@ -6,6 +6,17 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  // Check if the 'planets' property exists in the data
+  if (data && data.planets) {
+    // Use find to locate the planet that has the specified moon
+    const planetWithMoon = data.planets.find(planet => planet.moons && planet.moons.includes(moonName));
+    
+    // Return the planet name if found, otherwise return null
+    return planetWithMoon ? planetWithMoon.name : null;
+  } else {
+    // Return null if 'planets' property is missing
+    return null;
+  }
 }
 
 

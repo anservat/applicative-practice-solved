@@ -6,7 +6,36 @@
 
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+// maxBy function
+function maxBy(array, cb) {
+  let maxItem = null;
+  let maxValue = -Infinity;
+
+  for (const item of array) {
+    const value = cb(item);
+    if (value > maxValue) {
+      maxValue = value;
+      maxItem = item;
+    }
+  }
+
+  return maxItem;
+}
+
+// getGreatestDiscoveryYear function
+function getGreatestDiscoveryYear(data) {
+  if (!data || !data.asteroids) {
+    // Return undefined for invalid or missing data
+    return undefined;
+  }
+
+  // Use maxBy to find the year with the greatest number of Asteroid discoveries
+  const greatestYear = maxBy(data.asteroids, (yearData) => yearData.discoveries);
+
+  return greatestYear ? greatestYear.year : undefined;
+}
+// Export functions
+module.exports = { maxBy, getGreatestDiscoveryYear };
 }
 
 // === TEST YOURSELF ===

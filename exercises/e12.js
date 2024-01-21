@@ -6,6 +6,22 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  // Check if the 'planets' property exists in the data
+  if (data && data.planets) {
+    // Use reduce to sum up the moons count for all planets
+    return data.planets.reduce((sum, planet) => {
+      // Check if 'moonsCount' property exists for the current planet
+      if (planet.moonsCount !== undefined) {
+        return sum + planet.moonsCount;
+      } else {
+        // If 'moonsCount' property is missing, return sum without modification
+        return sum;
+      }
+    }, 0);
+  } else {
+    // Return 0 if 'planets' property is missing
+    return 0;
+  }
 }
 
 

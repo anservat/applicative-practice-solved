@@ -5,7 +5,14 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidNames(data) {
-  // Your code goes here...
+  // Check if the 'asteroids' property exists in the data
+  if (data && data.asteroids) {
+    // Use map to extract names from each asteroid object
+    return data.asteroids.map(asteroid => asteroid.name);
+  } else {
+    // Return an empty array if 'asteroids' property is missing
+    return [];
+  }
 }
 
 

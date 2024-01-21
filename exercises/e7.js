@@ -6,6 +6,16 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
+  // Check if the 'planets' property exists in the data
+  if (data && data.planets) {
+    // Use filter to extract planets that have moons
+    const planetsWithMoons = data.planets.filter(planet => planet.moonsCount > 0);
+    // Use map to extract names from each planet with moons
+    return planetsWithMoons.map(planet => planet.name);
+  } else {
+    // Return an empty array if 'planets' property is missing
+    return [];
+  }
 }
 
 

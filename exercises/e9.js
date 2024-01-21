@@ -6,6 +6,17 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+  // Check if the 'planets' property exists in the data
+  if (data && data.planets) {
+    // Use find to locate the data object of the planet "Earth"
+    const earthData = data.planets.find(planet => planet.name === 'Earth');
+    
+    // Return the data object if found, otherwise return null
+    return earthData || null;
+  } else {
+    // Return null if 'planets' property is missing
+    return null;
+  }
 }
 
 

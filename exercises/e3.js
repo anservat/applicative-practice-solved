@@ -6,6 +6,14 @@ import { data } from "../data/data";
 
 export function getAllAverageTemperatures(data) {
   // Your code goes here...
+  // Check if the 'planets' property exists in the data
+  if (data && data.planets) {
+    // Use map to extract average temperatures from each planet object
+    return data.planets.map(planet => planet.avgTemp);
+  } else {
+    // Return an empty array if 'planets' property is missing
+    return [];
+  }
 }
 
 
