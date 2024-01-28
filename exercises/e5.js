@@ -5,15 +5,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
-  // Your code goes here...
-  // Check if the 'planets' property exists in the data
   if (data && data.planets) {
-    // Use filter to extract planets with massValue greater or equal to the given number
     const selectedPlanets = data.planets.filter(planet => planet.mass.massValue >= number);
-    // Use map to extract names from each selected planet object
     return selectedPlanets.map(planet => planet.name);
   } else {
-    // Return an empty array if 'planets' property is missing
     return []; 
   }
 }

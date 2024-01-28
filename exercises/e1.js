@@ -5,13 +5,9 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetNames(data) {
-  // Your code goes here...
-  // Check if the 'planets' property exists in the data
   if (data && data.planets) {
-    // Use map to extract names from each planet object
     return data.planets.map(planet => planet.name);
   } else {
-    // Return an empty array if 'planets' property is missing
     return [];
   }
 }

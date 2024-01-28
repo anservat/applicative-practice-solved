@@ -5,15 +5,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  // Your code goes here...
-  // Check if the 'asteroids' property exists in the data
   if (data && data.asteroids) {
-    // Use filter to extract asteroids discovered after the given year
     const selectedAsteroids = data.asteroids.filter(asteroid => asteroid.discoveryYear > year);
-    // Use map to extract names from each selected asteroid object
     return selectedAsteroids.map(asteroid => asteroid.name);
   } else {
-    // Return an empty array if 'asteroids' property is missing
     return [];
   }
 }

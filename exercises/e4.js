@@ -5,15 +5,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithLowGravity(data) {
-  // Your code goes here...
-  // Check if the 'planets' property exists in the data
   if (data && data.planets) {
-    // Use filter to extract planets with gravity less than 10
     const lowGravityPlanets = data.planets.filter(planet => planet.gravity < 10);
-    // Use map to extract names from each low gravity planet object
     return lowGravityPlanets.map(planet => planet.name);
   } else {
-    // Return an empty array if 'planets' property is missing
     return [];
   }
 }
