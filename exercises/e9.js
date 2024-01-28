@@ -6,11 +6,14 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   if (data && data.planets) {
-    const earthData = data.planets.find(planet => planet.name === 'Earth');
-    return earthData || null;
-  } else {
-    return null;
+    for (const planet of data.planets) {
+      if (planet.name === 'Earth') {
+        return { ...planet };
+      }
+    }
   }
+
+  return null;
 }
 
 
