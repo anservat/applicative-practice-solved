@@ -5,20 +5,8 @@ import { data } from "../data/data";
 // Return example: [1, 2, ... , N]
 
 export function getAllAverageTemperatures(data) {
-  const averageTemperatures = [];
-
-  if (data && data.planets) {
-    for (const planet of data.planets) {
-      if (planet.avgTemp !== undefined) {
-        averageTemperatures.push(planet.avgTemp);
-      }
-    }
-  }
-
-  return averageTemperatures;
+  return (data && data.planets) ? data.planets.map(planet => planet.avgTemp !== undefined ? planet.avgTemp : null).filter(temp => temp !== null) : [];
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"

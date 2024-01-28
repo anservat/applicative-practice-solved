@@ -5,21 +5,24 @@ import { data } from "../data/data";
 // Return example: 132.53
 
 export function getAveragePlanetsTemperature(data) {
-  if (data && data.planets) {
-    const planets = data.planets;
-    const totalTemperature = planets.reduce((sum, planet) => {
-      if (planet.temperature !== undefined) {
-        return sum + planet.temperature;
-      } else {
-        return sum;
-      }
-    }, 0);
+  let totalTemperature = 0;
+  let planetCount = 0;
 
-    const averageTemperature = totalTemperature / planets.length;
-    return Math.round(averageTemperature * 100) / 100;
-  } else {
+  if (data && data.planets) {
+    for (const planet of data.planets) {
+      if (planet.temperature !== undefined) {
+        totalTemperature += planet.temperature;
+        planetCount += 1;
+      }
+    }
+  }
+
+  if (planetCount === 0) {
     return null;
   }
+
+  const averageTemperature = totalTemperature / planetCount;
+  return Math.round(averageTemperature * 100) / 100;
 }
 
 
