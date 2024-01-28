@@ -9,9 +9,7 @@
  */
 
 export function minBy(array, cb) {
-  // Your code goes here...
   if (array.length === 0) {
-    // Return undefined for an empty array
     return undefined;
   }
 
@@ -22,7 +20,6 @@ export function minBy(array, cb) {
     const value = cb(array[i]);
 
     if (value < minValue) {
-      // Update min value and corresponding element
       minValue = value;
       minElement = array[i];
     }
@@ -32,10 +29,8 @@ export function minBy(array, cb) {
 }
 
 export function maxBy(array, cb) {
-  // Your code goes here...
-  if (array.length === 0) {
-    // Return undefined for an empty array
-    return undefined;
+    if (array.length === 0) {
+      return undefined;
   }
 
   let maxValue = cb(array[0]);
@@ -45,7 +40,6 @@ export function maxBy(array, cb) {
     const value = cb(array[i]);
 
     if (value > maxValue) {
-      // Update max value and corresponding element
       maxValue = value;
       maxElement = array[i];
     }
