@@ -14,7 +14,7 @@ export function getPlanetsWithMassValue(data, number) {
     return selectedPlanets.map(planet => planet.name);
   } else {
     // Return an empty array if 'planets' property is missing
-    return [];
+    return []; 
   }
 }
 

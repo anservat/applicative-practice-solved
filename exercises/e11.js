@@ -6,15 +6,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  // Your code goes here...
-  // Check if the 'planets' property exists in the data
   if (data && data.planets) {
-    // Use filter to extract planets with less than 10 moons
     const lowMoonsPlanets = data.planets.filter(planet => planet.moonsCount < 10 || planet.moonsCount === 0);
-    // Return the names of planets with less than 10 moons
     return lowMoonsPlanets.map(planet => planet.name);
   } else {
-    // Return an empty array if 'planets' property is missing
     return [];
   }
 }
