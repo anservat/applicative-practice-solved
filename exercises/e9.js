@@ -5,18 +5,10 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getEarthData(data) {
-  if (data && data.planets) {
-    for (const planet of data.planets) {
-      if (planet.name === 'Earth') {
-        return { ...planet };
-      }
-    }
-  }
-
-  return null;
+  return data && data.planets
+    ? { ...data.planets.find((planet) => planet.name === "Earth") } || null
+    : null;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"
