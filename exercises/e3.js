@@ -5,7 +5,11 @@ import { data } from "../data/data";
 // Return example: [1, 2, ... , N]
 
 export function getAllAverageTemperatures(data) {
-  return (data && data.planets) ? data.planets.map(planet => planet.avgTemp !== undefined ? planet.avgTemp : null).filter(temp => temp !== null) : [];
+  return data && data.planets
+    ? data.planets
+        .map((planet) => (planet.avgTemp !== undefined ? planet.avgTemp : null))
+        .filter((temp) => temp !== null)
+    : [];
 }
 
 // === TEST YOURSELF ===

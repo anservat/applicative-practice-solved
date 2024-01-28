@@ -5,20 +5,17 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  const selectedAsteroids = [];
-
-  if (data && data.asteroids) {
-    for (const asteroid of data.asteroids) {
-      if (asteroid.discoveryYear !== undefined && asteroid.discoveryYear > year) {
-        selectedAsteroids.push(asteroid.name);
-      }
-    }
-  }
-
-  return selectedAsteroids;
+  return data && data.asteroids
+    ? data.asteroids
+        .filter(
+          (asteroid) =>
+            asteroid.discoveryYear !== undefined &&
+            asteroid.discoveryYear > year
+        )
+        .map((asteroid) => asteroid.name || null)
+        .filter((name) => name !== null)
+    : [];
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
