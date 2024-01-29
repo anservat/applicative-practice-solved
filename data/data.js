@@ -97,7 +97,8 @@ export const data = {
       mass: { massValue: 3.30114, massExponent: 23 },
       vol: { volValue: 6.083, volExponent: 10 },
       gravity: 3.7,
-      avgTemp: 440
+      avgTemp: 440,
+      moonsCount: 0
     },
     {
       id: 'saturne',
@@ -157,7 +158,8 @@ export const data = {
       mass: { massValue: 4.86747, massExponent: 24 },
       vol: { volValue: 9.2843, volExponent: 11 },
       gravity: 8.87,
-      avgTemp: 737
+      avgTemp: 737,
+      moonsCount: 0
     }
   ],
 

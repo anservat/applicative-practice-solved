@@ -5,20 +5,10 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  let sum = 0;
-
-  if (data && data.planets) {
-    for (const planet of data.planets) {
-      if (planet.moonsCount !== undefined) {
-        sum += planet.moonsCount;
-      }
-    }
-  }
-
-  return sum;
+  return data && data.planets
+    ? data.planets.reduce((sum, planet) => sum + (planet.moonsCount || 0), 0)
+    : 0;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

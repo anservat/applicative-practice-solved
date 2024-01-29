@@ -5,18 +5,12 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getAsteroidDataByName(data, asteroidName) {
-  if (data && data.asteroids) {
-    for (const asteroid of data.asteroids) {
-      if (asteroid.name === asteroidName) {
-        return { ...asteroid };
-      }
-    }
-  }
-
-  return null;
+  return data && data.asteroids
+    ? {
+        ...data.asteroids.find((asteroid) => asteroid.name === asteroidName),
+      } || null
+    : null;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"
